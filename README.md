@@ -4,6 +4,8 @@ With Selenium 4.5.2 I get `org.openqa.selenium.WebDriverException: Unable to par
 
 This repo contains a test to reproduce this issue.
 
+The logs are in the repo.
+
 ```xml
 <dependency>
   <groupId>org.seleniumhq.selenium</groupId>
