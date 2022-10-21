@@ -61,8 +61,8 @@ Selenium Docker : 4.5.0-20221017
 			System.out.println(i);
 			
 			driver.getWindowHandle();
-		    driver.getCurrentUrl();
-		    driver.getTitle();
+			driver.getCurrentUrl();
+			driver.getTitle();
 			driver.manage().timeouts().getScriptTimeout();
 			
 			driver.findElement(By.id("secondes")).clear();
