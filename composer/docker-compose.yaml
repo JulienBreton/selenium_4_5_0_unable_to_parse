@@ -1,0 +1,43 @@
+version: '2'
+services:
+    firefox:
+        image: selenium/node-firefox:4.5.0-20221017
+        shm_size: 2gb
+        restart: on-failure
+        volumes:
+            - /dev/shm:/dev/shm
+            - /home/selenium/upload:/home/seluser/upload        
+        depends_on:
+            - selenium-hub
+        environment:
+            - SE_EVENT_BUS_HOST=selenium-hub
+            - SE_EVENT_BUS_PUBLISH_PORT=4442
+            - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+            - SE_OPTS=--log-level FINE
+        ports:
+            - 5900
+
+    chrome:
+        image: selenium/node-chrome:4.5.0-20221017
+        shm_size: 2gb
+        restart: on-failure
+        volumes:
+            - /dev/shm:/dev/shm
+            - /home/selenium/upload:/home/seluser/upload
+        depends_on:
+            - selenium-hub
+        environment:
+            - SE_EVENT_BUS_HOST=selenium-hub
+            - SE_EVENT_BUS_PUBLISH_PORT=4442
+            - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+            - SE_OPTS=--log-level FINE
+        ports:
+            - 5900            
+
+    selenium-hub:
+        restart: on-failure
+        image: selenium/hub:4.5.0-20221017       
+        ports:
+            - "4442:4442"
+            - "4443:4443"
+            - "4444:4444"

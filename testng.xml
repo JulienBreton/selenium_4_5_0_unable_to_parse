@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="sampleTest" parallel="none">
+	
+	<test name="sampleTest" preserve-order="true">
+		<classes>
+			<class
+				name="demoWait.TestWait">
+				<methods>
+					<include name="waitTest" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+</suite> <!-- Suite -->
