@@ -1,7 +1,7 @@
 version: '2'
 services:
     firefox:
-        image: selenium/node-firefox:4.5.0-20221017
+        image: selenium/node-firefox:4.5.2-20221021
         shm_size: 2gb
         restart: on-failure
         volumes:
@@ -18,7 +18,7 @@ services:
             - 5900
 
     chrome:
-        image: selenium/node-chrome:4.5.0-20221017
+        image: selenium/node-chrome:4.5.2-20221021
         shm_size: 2gb
         restart: on-failure
         volumes:
@@ -36,7 +36,7 @@ services:
 
     selenium-hub:
         restart: on-failure
-        image: selenium/hub:4.5.0-20221017       
+        image: selenium/hub:4.5.2-20221021      
         ports:
             - "4442:4442"
             - "4443:4443"
